@@ -1,19 +1,14 @@
 sap.ui.define([
 	"sap/ui/core/UIComponent",
     "sap/ui/model/json/JSONModel",
-    "sap/ui/model/resource/ResourceModel"
-], function (UIComponent, JSONModel, ResourceModel) {
+], function (UIComponent, JSONModel) {
 	"use strict";
 
 	return UIComponent.extend("sapui5.Component", {
 
 		metadata: {
-            "interfaces": ["sap.ui.core.IAsyncContentCreation"],
-            "rootView": {
-                "viewName": "sapui5.view.View1",
-                "type": "XML",
-                "id": "View1"
-            }
+            interfaces: ["sap.ui.core.IAsyncContentCreation"],
+            manifest: "json"
 		},
 
 		/**
@@ -32,11 +27,6 @@ sap.ui.define([
             };
             var oModel = new JSONModel(oData);
             this.setModel(oModel);
-
-            var i18nModel = new ResourceModel({
-                bundleName: "sapui5.i18n.i18n"
-            });
-            this.setModel(i18nModel, 'i18n');
 		}
 	});
 });
