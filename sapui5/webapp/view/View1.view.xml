@@ -1,0 +1,18 @@
+<mvc:View
+    controllerName="sapui5.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns="sap.m"
+>
+	<Text text="Welcome"/>
+    <Button
+        text="{i18n>sayHelloButtonText}"
+        press=".onButtonPress"
+    />
+    <Input
+        value="{/recipient/name}"
+        description="Hello {/recipient/name}"
+        valueLiveUpdate="true"
+        width="60%"
+        placeholder="Your name"
+    />
+</mvc:View>
